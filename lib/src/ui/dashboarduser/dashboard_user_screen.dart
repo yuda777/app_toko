@@ -64,10 +64,12 @@ class _DashboardUserScreenState extends State<DashboardUserScreen> {
                     return ListTile(
                       title: Text(
                         itemUser.username,
+                        // ignore: deprecated_member_use
                         style: Theme.of(context).textTheme.title,
                       ),
                       subtitle: Text(
                         '${itemUser.age}',
+                        // ignore: deprecated_member_use
                         style: Theme.of(context).textTheme.subtitle,
                       ),
                     );

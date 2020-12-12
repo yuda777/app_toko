@@ -188,6 +188,7 @@ class RegisterScreen extends StatelessWidget {
   Widget _buildWidgetLabel(BuildContext context, String label) {
     return Text(
       label,
+      // ignore: deprecated_member_use
       style: Theme.of(context).textTheme.subtitle.merge(
             TextStyle(
               color: Colors.grey,
@@ -200,6 +201,7 @@ class RegisterScreen extends StatelessWidget {
     return Center(
       child: Text(
         'Create your free account.',
+        // ignore: deprecated_member_use
         style: Theme.of(context).textTheme.title.merge(
               TextStyle(fontWeight: FontWeight.bold),
             ),

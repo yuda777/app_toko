@@ -13,6 +13,7 @@ import 'package:flutter_sample_oauth/src/utils/dio_logging_interceptors.dart';
 class ApiAuthProvider {
   final Dio _dio = new Dio();
   final String _baseUrl = 'http://bengkelrobot.net:8002/';
+  // final String _baseUrl = 'http://192.168.0.113:3000/';
   final String clientId = 'bengkel-robot-client';
   final String clientSecret = 'bengkel-robot-secret';
 
@@ -41,6 +42,7 @@ class ApiAuthProvider {
 
   Future<Token> loginUser(LoginBody loginBody) async {
     try {
+      print(loginBody.toJson());
       final response = await _dio.post(
         'oauth/token',
         data: FormData.fromMap(loginBody.toJson()),
@@ -84,6 +86,7 @@ class ApiAuthProvider {
       print('getAllUsers');
       final response = await _dio.get(
         'users/user',
+        // '/',
         options: Options(
           headers: {
             'requirestoken': true,

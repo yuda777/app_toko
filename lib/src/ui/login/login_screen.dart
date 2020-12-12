@@ -164,6 +164,7 @@ class LoginScreen extends StatelessWidget {
   Widget _buildWidgetTitleLogin(BuildContext context) {
     return Text(
       'Login',
+      // ignore: deprecated_member_use
       style: Theme.of(context).textTheme.title.merge(
             TextStyle(
               fontSize: 24.0,
@@ -175,6 +176,7 @@ class LoginScreen extends StatelessWidget {
   Widget _buildWidgetLabel(BuildContext context, String label) {
     return Text(
       label,
+      // ignore: deprecated_member_use
       style: Theme.of(context).textTheme.subtitle.merge(
             TextStyle(
               color: Colors.grey,
