@@ -139,7 +139,7 @@ class LoginScreen extends StatelessWidget {
         onPressed: () {
           String username = _controllerEmailAddress.text.trim();
           String password = _controllerPassword.text.trim();
-          _loginBloc.add(LoginEvent(LoginBody(username, password, 'password')));
+          _loginBloc.add(LoginEvent(LoginBody(username, password)));
         },
         color: Theme.of(context).primaryColor,
       ),

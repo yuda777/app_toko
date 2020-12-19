@@ -8,13 +8,10 @@ part of 'refresh_token_body.dart';
 
 RefreshTokenBody _$RefreshTokenBodyFromJson(Map<String, dynamic> json) {
   return RefreshTokenBody(
-    json['grant_type'] as String,
-    json['refresh_token'] as String,
-  );
+      json['refresh_token'] as String);
 }
 
 Map<String, dynamic> _$RefreshTokenBodyToJson(RefreshTokenBody instance) =>
-    <String, dynamic>{
-      'grant_type': instance.grantType,
-      'refresh_token': instance.refreshToken,
+    <String, dynamic>{      
+      'refresh_token': instance.refreshToken
     };

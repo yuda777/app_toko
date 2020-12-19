@@ -29,16 +29,19 @@ dependencies:
 
   # The Font Awesome Icon pack
   font_awesome_flutter: ^8.5.0
+  json_annotation:
 
 dev_dependencies:
   flutter_test:
-    sdk: flutter
+   sdk: flutter
 
   # Automatically generate code for converting to and from JSON by Dart classes.
-  json_serializable: ^3.2.3
+  json_serializable:  
+  json_model:
 
   # Tools to write binaries that run builders.
-  build_runner: ^1.7.2
+  build_runner:
+  
 
 flutter:
 

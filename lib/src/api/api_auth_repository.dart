@@ -5,6 +5,7 @@ import 'package:flutter_sample_oauth/src/model/refreshtoken/refresh_token_body.d
 import 'package:flutter_sample_oauth/src/model/register/register.dart';
 import 'package:flutter_sample_oauth/src/model/token/token.dart';
 import 'package:flutter_sample_oauth/src/model/user/user.dart';
+import 'package:flutter_sample_oauth/src/model/item/item.dart';
 
 class ApiAuthRepository {
   final ApiAuthProvider _apiAuthProvider = ApiAuthProvider();
@@ -14,6 +15,6 @@ class ApiAuthRepository {
   Future<Token> postLoginUser(LoginBody loginBody) => _apiAuthProvider.loginUser(loginBody);
 
   Future<Token> postRefreshAuth(RefreshTokenBody refreshTokenBody) => _apiAuthProvider.refreshAuth(refreshTokenBody);
-
+  
   Future<User> fetchAllUsers() => _apiAuthProvider.getAllUsers();
 }

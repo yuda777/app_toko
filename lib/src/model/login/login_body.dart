@@ -6,10 +6,8 @@ part 'login_body.g.dart';
 class LoginBody {
   String username;
   String password;
-  @JsonKey(name: 'grant_type')
-  String grantType;
 
-  LoginBody(this.username, this.password, this.grantType);
+  LoginBody(this.username, this.password);
 
   factory LoginBody.fromJson(Map<String, dynamic> json) => _$LoginBodyFromJson(json);
 
@@ -17,6 +15,6 @@ class LoginBody {
 
   @override
   String toString() {
-    return 'LoginBody{username: $username, password: $password, grantType: $grantType}';
+    return 'LoginBody{username: $username, password: $password}';
   }
 }

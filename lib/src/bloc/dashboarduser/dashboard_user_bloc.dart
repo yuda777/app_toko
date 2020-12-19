@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter_sample_oauth/src/api/api_auth_repository.dart';
 import 'package:flutter_sample_oauth/src/model/user/user.dart';
+import 'package:flutter_sample_oauth/src/model/item/item.dart';
 
 abstract class DashboardUserState {}
 
@@ -18,6 +19,7 @@ class DashboardUserSuccess extends DashboardUserState {
   final List<ItemUser> users;
 
   DashboardUserSuccess(this.users);
+  
 }
 
 class DashboardUserEvent {}
@@ -31,7 +33,8 @@ class DashboardUserBloc extends Bloc<DashboardUserEvent, DashboardUserState> {
   @override
   Stream<DashboardUserState> mapEventToState(DashboardUserEvent event) async* {
     yield DashboardUserLoading();
-    User user =  await apiAuthRepository.fetchAllUsers();
+    print("dashboard");
+    User user =  await apiAuthRepository.fetchAllUsers();    
     if (user.error != null) {
       yield DashboardUserFailure(user.error);
       return;

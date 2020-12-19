@@ -8,12 +8,13 @@ import 'package:flutter_sample_oauth/src/model/refreshtoken/refresh_token_body.d
 import 'package:flutter_sample_oauth/src/model/register/register.dart';
 import 'package:flutter_sample_oauth/src/model/token/token.dart';
 import 'package:flutter_sample_oauth/src/model/user/user.dart';
+import 'package:flutter_sample_oauth/src/model/item/item.dart';
 import 'package:flutter_sample_oauth/src/utils/dio_logging_interceptors.dart';
 
 class ApiAuthProvider {
   final Dio _dio = new Dio();
-  final String _baseUrl = 'http://bengkelrobot.net:8002/';
-  // final String _baseUrl = 'http://192.168.0.113:3000/';
+  // final String _baseUrl = 'http://bengkelrobot.net:8002/';
+  final String _baseUrl = 'http://192.168.0.113:3000';
   final String clientId = 'bengkel-robot-client';
   final String clientSecret = 'bengkel-robot-secret';
 
@@ -44,8 +45,11 @@ class ApiAuthProvider {
     try {
       print(loginBody.toJson());
       final response = await _dio.post(
-        'oauth/token',
-        data: FormData.fromMap(loginBody.toJson()),
+        // 'oauth/token',
+        '/auth/login',
+        // data: FormData.fromMap(loginBody.toJson()),
+        data: loginBody.toJson(),
+        // data: '{ "username": "hendri4@abc.com", "password": "1234"}',
         options: Options(
           headers: {
             'Authorization': 'Basic ${base64Encode(
@@ -54,6 +58,8 @@ class ApiAuthProvider {
           },
         ),
       );
+      print("respondata");
+      print(response.data);
       return Token.fromJson(response.data);
     } catch (error, stacktrace) {
       _printError(error, stacktrace);
@@ -64,16 +70,20 @@ class ApiAuthProvider {
   Future<Token> refreshAuth(RefreshTokenBody refreshTokenBody) async {
     try {
       final response = await _dio.post(
-        'oauth/token',
+        // 'oauth/token',
+        'auth/refresh-token',
         data: FormData.fromMap(refreshTokenBody.toJson()),
         options: Options(
+          // headers: {
+          //   'Authorization': 'Basic ${base64Encode(
+          //     utf8.encode('$clientId:$clientSecret'),
+          //   )}',
           headers: {
-            'Authorization': 'Basic ${base64Encode(
-              utf8.encode('$clientId:$clientSecret'),
-            )}',
+            'refreshToken': 'Bearer asda',
           },
         ),
       );
+      
       return Token.fromJson(response.data);
     } catch (error, stacktrace) {
       _printError(error, stacktrace);
@@ -85,8 +95,8 @@ class ApiAuthProvider {
     try {
       print('getAllUsers');
       final response = await _dio.get(
-        'users/user',
-        // '/',
+        // 'users/user',
+        '/',
         options: Options(
           headers: {
             'requirestoken': true,

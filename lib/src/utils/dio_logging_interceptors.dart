@@ -35,13 +35,17 @@ class DioLoggingInterceptors extends InterceptorsWrapper {
   }
 
   @override
-  Future onResponse(Response response) {
+  Future onResponse(Response response) async {
     print(
         "<-- ${response.statusCode} ${(response.request != null ? (response.request.baseUrl + response.request.path) : 'URL')}");
     print("Headers:");
     response.headers?.forEach((k, v) => print('$k: $v'));
     print("Response: ${response.data}");
     print("<-- END HTTP");
+    // final responseBody = json.decode(response.data);
+    // print("${response.data["accessToken"]}");
+    // await _sharedPreferencesManager.putString(SharedPreferencesManager.keyAccessToken, response.data["accessToken"]);
+    // print('accessToken: ${_sharedPreferencesManager.getString(SharedPreferencesManager.keyAccessToken)}');
     return super.onResponse(response);
   }
 
@@ -60,7 +64,7 @@ class DioLoggingInterceptors extends InterceptorsWrapper {
       _dio.interceptors.responseLock.lock();
 
       String refreshToken = _sharedPreferencesManager.getString(SharedPreferencesManager.keyRefreshToken);
-      RefreshTokenBody refreshTokenBody = RefreshTokenBody('refresh_token', refreshToken);
+      RefreshTokenBody refreshTokenBody = RefreshTokenBody(refreshToken);
       ApiAuthRepository apiAuthRepository = ApiAuthRepository();
       Token token = await apiAuthRepository.postRefreshAuth(refreshTokenBody);
       String newAccessToken = token.accessToken;

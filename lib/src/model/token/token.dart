@@ -4,19 +4,14 @@ part 'token.g.dart';
 
 @JsonSerializable()
 class Token {
-  @JsonKey(name: 'access_token')
+  @JsonKey(name: 'accessToken')
   String accessToken;
-  @JsonKey(name: 'token_type')
-  String tokenType;
-  @JsonKey(name: 'refresh_token')
+  @JsonKey(name: 'refreshToken')
   String refreshToken;
-  @JsonKey(name: 'expires_in')
-  int expiresIn;
-  String scope;
   @JsonKey(ignore: true)
   String error;
 
-  Token(this.accessToken, this.tokenType, this.refreshToken, this.expiresIn, this.scope);
+  Token(this.accessToken, this.refreshToken,);
 
   factory Token.fromJson(Map<String, dynamic> json) => _$TokenFromJson(json);
 
@@ -26,6 +21,6 @@ class Token {
 
   @override
   String toString() {
-    return 'Token{accessToken: $accessToken, tokenType: $tokenType, refreshToken: $refreshToken, expiresIn: $expiresIn, scope: $scope}';
+    return 'Token{accessToken: $accessToken, refreshToken: $refreshToken}';
   }
 }
