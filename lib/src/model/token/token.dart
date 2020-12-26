@@ -11,7 +11,7 @@ class Token {
   @JsonKey(ignore: true)
   String error;
 
-  Token(this.accessToken, this.refreshToken,);
+  Token(this.accessToken, this.refreshToken);
 
   factory Token.fromJson(Map<String, dynamic> json) => _$TokenFromJson(json);
 

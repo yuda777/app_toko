@@ -4,10 +4,14 @@ part 'refresh_token_body.g.dart';
 
 @JsonSerializable()
 class RefreshTokenBody {
-  @JsonKey(name: 'refresh_token')
+  @JsonKey(name: 'accessToken')
+  String accessToken;
+  @JsonKey(name: 'refreshToken')
   String refreshToken;
+  @JsonKey(ignore: true)
+  String error;
 
-  RefreshTokenBody(this.refreshToken);
+  RefreshTokenBody(this.accessToken, this.refreshToken);
 
   factory RefreshTokenBody.fromJson(Map<String, dynamic> json) => _$RefreshTokenBodyFromJson(json);
 
@@ -15,6 +19,6 @@ class RefreshTokenBody {
 
   @override
   String toString() {
-    return 'RefreshTokenBody{refreshToken: $refreshToken}';
+    return 'RefreshTokenBody{accessToken: $accessToken, refreshToken: $refreshToken}';
   }
 }

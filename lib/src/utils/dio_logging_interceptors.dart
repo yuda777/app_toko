@@ -58,13 +58,14 @@ class DioLoggingInterceptors extends InterceptorsWrapper {
     print("<-- End error");
 
     int responseCode = dioError.response.statusCode;
+    // String refreshToken = _sharedPreferencesManager.getString(SharedPreferencesManager.keyRefreshToken);
     String oldAccessToken = _sharedPreferencesManager.getString(SharedPreferencesManager.keyAccessToken);
     if (oldAccessToken != null && responseCode == 401 && _sharedPreferencesManager != null) {
       _dio.interceptors.requestLock.lock();
       _dio.interceptors.responseLock.lock();
 
       String refreshToken = _sharedPreferencesManager.getString(SharedPreferencesManager.keyRefreshToken);
-      RefreshTokenBody refreshTokenBody = RefreshTokenBody(refreshToken);
+      RefreshTokenBody refreshTokenBody = RefreshTokenBody(oldAccessToken,refreshToken);
       ApiAuthRepository apiAuthRepository = ApiAuthRepository();
       Token token = await apiAuthRepository.postRefreshAuth(refreshTokenBody);
       String newAccessToken = token.accessToken;
