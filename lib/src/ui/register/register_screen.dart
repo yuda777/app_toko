@@ -3,9 +3,9 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_sample_oauth/src/bloc/register/register_bloc.dart';
-import 'package:flutter_sample_oauth/src/model/register/register.dart';
-import 'package:flutter_sample_oauth/src/widget/widget_card_loading.dart';
+import 'package:app_toko/src/bloc/register/register_bloc.dart';
+import 'package:app_toko/src/model/register/register.dart';
+import 'package:app_toko/src/widget/widget_card_loading.dart';
 
 class RegisterScreen extends StatelessWidget {
   final RegisterBloc _registerBloc = RegisterBloc();

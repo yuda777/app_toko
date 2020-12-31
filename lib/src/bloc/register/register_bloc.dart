@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
-import 'package:flutter_sample_oauth/src/api/api_auth_repository.dart';
-import 'package:flutter_sample_oauth/src/model/diagnostic/diagnostic.dart';
-import 'package:flutter_sample_oauth/src/model/register/register.dart';
+import 'package:app_toko/src/api/api_auth_repository.dart';
+import 'package:app_toko/src/model/diagnostic/diagnostic.dart';
+import 'package:app_toko/src/model/register/register.dart';
 
 abstract class RegisterState {}
 

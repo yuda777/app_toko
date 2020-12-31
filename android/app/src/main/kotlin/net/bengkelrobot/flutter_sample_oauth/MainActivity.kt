@@ -1,4 +1,4 @@
-package net.bengkelrobot.flutter_sample_oauth
+package net.yuda.app_toko
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

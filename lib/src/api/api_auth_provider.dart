@@ -2,21 +2,21 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_sample_oauth/src/model/diagnostic/diagnostic.dart';
-import 'package:flutter_sample_oauth/src/model/login/login_body.dart';
-import 'package:flutter_sample_oauth/src/model/refreshtoken/refresh_token_body.dart';
-import 'package:flutter_sample_oauth/src/model/register/register.dart';
-import 'package:flutter_sample_oauth/src/model/token/token.dart';
-import 'package:flutter_sample_oauth/src/model/user/user.dart';
-// import 'package:flutter_sample_oauth/src/model/item/item.dart';
-import 'package:flutter_sample_oauth/src/utils/dio_logging_interceptors.dart';
+import 'package:app_toko/src/model/diagnostic/diagnostic.dart';
+import 'package:app_toko/src/model/login/login_body.dart';
+import 'package:app_toko/src/model/refreshtoken/refresh_token_body.dart';
+import 'package:app_toko/src/model/register/register.dart';
+import 'package:app_toko/src/model/token/token.dart';
+import 'package:app_toko/src/model/user/user.dart';
+// import 'package:app_toko/src/model/item/item.dart';
+import 'package:app_toko/src/utils/dio_logging_interceptors.dart';
 
 class ApiAuthProvider {
   final Dio _dio = new Dio();
   // final String _baseUrl = 'http://bengkelrobot.net:8002/';
   final String _baseUrl = 'http://192.168.0.113:3000/';
-  final String clientId = 'bengkel-robot-client';
-  final String clientSecret = 'bengkel-robot-secret';
+  // final String clientId = 'bengkel-robot-client';
+  // final String clientSecret = 'bengkel-robot-secret';
 
   ApiAuthProvider() {
     _dio.options.baseUrl = _baseUrl;

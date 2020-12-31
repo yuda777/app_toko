@@ -4,9 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_sample_oauth/src/bloc/login/login_bloc.dart';
-import 'package:flutter_sample_oauth/src/model/login/login_body.dart';
-import 'package:flutter_sample_oauth/src/widget/widget_card_loading.dart';
+import 'package:app_toko/src/bloc/login/login_bloc.dart';
+import 'package:app_toko/src/model/login/login_body.dart';
+import 'package:app_toko/src/widget/widget_card_loading.dart';
 
 class LoginScreen extends StatelessWidget {
   final LoginBloc _loginBloc = LoginBloc();

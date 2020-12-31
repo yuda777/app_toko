@@ -1,11 +1,11 @@
-import 'package:flutter_sample_oauth/src/api/api_auth_provider.dart';
-import 'package:flutter_sample_oauth/src/model/diagnostic/diagnostic.dart';
-import 'package:flutter_sample_oauth/src/model/login/login_body.dart';
-import 'package:flutter_sample_oauth/src/model/refreshtoken/refresh_token_body.dart';
-import 'package:flutter_sample_oauth/src/model/register/register.dart';
-import 'package:flutter_sample_oauth/src/model/token/token.dart';
-import 'package:flutter_sample_oauth/src/model/user/user.dart';
-import 'package:flutter_sample_oauth/src/model/item/item.dart';
+import 'package:app_toko/src/api/api_auth_provider.dart';
+import 'package:app_toko/src/model/diagnostic/diagnostic.dart';
+import 'package:app_toko/src/model/login/login_body.dart';
+import 'package:app_toko/src/model/refreshtoken/refresh_token_body.dart';
+import 'package:app_toko/src/model/register/register.dart';
+import 'package:app_toko/src/model/token/token.dart';
+import 'package:app_toko/src/model/user/user.dart';
+import 'package:app_toko/src/model/item/item.dart';
 
 class ApiAuthRepository {
   final ApiAuthProvider _apiAuthProvider = ApiAuthProvider();

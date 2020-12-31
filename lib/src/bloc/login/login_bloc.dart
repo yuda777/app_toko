@@ -1,9 +1,9 @@
 import 'package:bloc/bloc.dart';
-import 'package:flutter_sample_oauth/src/api/api_auth_repository.dart';
-import 'package:flutter_sample_oauth/src/injector/injector.dart';
-import 'package:flutter_sample_oauth/src/model/login/login_body.dart';
-import 'package:flutter_sample_oauth/src/model/token/token.dart';
-import 'package:flutter_sample_oauth/src/storage/sharedpreferences/shared_preferences_manager.dart';
+import 'package:app_toko/src/api/api_auth_repository.dart';
+import 'package:app_toko/src/injector/injector.dart';
+import 'package:app_toko/src/model/login/login_body.dart';
+import 'package:app_toko/src/model/token/token.dart';
+import 'package:app_toko/src/storage/sharedpreferences/shared_preferences_manager.dart';
 
 abstract class LoginState {}
 

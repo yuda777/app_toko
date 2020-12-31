@@ -1,4 +1,4 @@
-import 'package:flutter_sample_oauth/src/model/diagnostic/diagnostic.dart';
+import 'package:app_toko/src/model/diagnostic/diagnostic.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'user.g.dart';

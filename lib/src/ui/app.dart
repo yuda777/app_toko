@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sample_oauth/src/injector/injector.dart';
-import 'package:flutter_sample_oauth/src/storage/sharedpreferences/shared_preferences_manager.dart';
-import 'package:flutter_sample_oauth/src/ui/dashboarduser/dashboard_user_screen.dart';
-import 'package:flutter_sample_oauth/src/ui/login/login_screen.dart';
-import 'package:flutter_sample_oauth/src/ui/register/register_screen.dart';
+import 'package:app_toko/src/injector/injector.dart';
+import 'package:app_toko/src/storage/sharedpreferences/shared_preferences_manager.dart';
+import 'package:app_toko/src/ui/dashboarduser/dashboard_user_screen.dart';
+import 'package:app_toko/src/ui/login/login_screen.dart';
+import 'package:app_toko/src/ui/register/register_screen.dart';
 
 class App extends StatelessWidget {
   final SharedPreferencesManager _sharedPreferencesManager = locator<SharedPreferencesManager>();

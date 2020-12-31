@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sample_oauth/src/injector/injector.dart';
-import 'package:flutter_sample_oauth/src/ui/app.dart';
+import 'package:app_toko/src/injector/injector.dart';
+import 'package:app_toko/src/ui/app.dart';
 
 void main() async {
   try {
