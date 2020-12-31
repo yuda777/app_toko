@@ -17,4 +17,6 @@ class ApiAuthRepository {
   Future<Token> postRefreshAuth(RefreshTokenBody refreshTokenBody) => _apiAuthProvider.refreshAuth(refreshTokenBody);
   
   Future<User> fetchAllUsers() => _apiAuthProvider.getAllUsers();
+
+  Future<dynamic> logOut(RefreshTokenBody refreshTokenBody) => _apiAuthProvider.logOut(refreshTokenBody);
 }
